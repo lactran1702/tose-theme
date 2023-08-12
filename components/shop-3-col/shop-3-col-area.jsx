@@ -1,5 +1,5 @@
-import React from 'react';
-import ShopFourColArea from '../shop-4-col/shop-4-col-area';
+import React from "react";
+import ShopFourColArea from "../shop-4-col/shop-4-col-area";
 
 const ShopThreeColArea = () => {
   return (

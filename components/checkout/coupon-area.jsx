@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const CouponArea = () => {
   const [checkoutLogin, setCheckoutLogin] = useState(false);
@@ -11,50 +11,81 @@ const CouponArea = () => {
             <div className="col-md-6">
               <div className="coupon-accordion">
                 {/* <!-- ACCORDION START --> */}
-                <h3>Returning customer? <span onClick={()=> setCheckoutLogin(!checkoutLogin)} id="showlogin">Click here to login</span></h3>
-                {checkoutLogin && <div id="checkout-login" className="coupon-content">
-                  <div className="coupon-info">
-                    <p className="coupon-text">Quisque gravida turpis sit amet nulla posuere lacinia. Cras sed est
-                      sit amet ipsum luctus.</p>
-                    <form action="#">
-                      <p className="form-row-first">
-                        <label>Username or email <span className="required">*</span></label>
-                        <input type="text" />
+                <h3>
+                  Returning customer?{" "}
+                  <span
+                    onClick={() => setCheckoutLogin(!checkoutLogin)}
+                    id="showlogin"
+                  >
+                    Click here to login
+                  </span>
+                </h3>
+                {checkoutLogin && (
+                  <div id="checkout-login" className="coupon-content">
+                    <div className="coupon-info">
+                      <p className="coupon-text">
+                        Quisque gravida turpis sit amet nulla posuere lacinia.
+                        Cras sed est sit amet ipsum luctus.
                       </p>
-                      <p className="form-row-last">
-                        <label>Password <span className="required">*</span></label>
-                        <input type="text" />
-                      </p>
-                      <p className="form-row">
-                        <button className="os-btn os-btn-black" type="submit">Login</button>
-                        <label>
-                          <input type="checkbox" />
-                          Remember me
-                        </label>
-                      </p>
-                      <p className="lost-password">
-                        <a href="#">Lost your password?</a>
-                      </p>
-                    </form>
+                      <form action="#">
+                        <p className="form-row-first">
+                          <label>
+                            Username or email{" "}
+                            <span className="required">*</span>
+                          </label>
+                          <input type="text" />
+                        </p>
+                        <p className="form-row-last">
+                          <label>
+                            Password <span className="required">*</span>
+                          </label>
+                          <input type="text" />
+                        </p>
+                        <p className="form-row">
+                          <button className="os-btn os-btn-black" type="submit">
+                            Login
+                          </button>
+                          <label>
+                            <input type="checkbox" />
+                            Remember me
+                          </label>
+                        </p>
+                        <p className="lost-password">
+                          <a href="#">Lost your password?</a>
+                        </p>
+                      </form>
+                    </div>
                   </div>
-                </div>}
+                )}
                 {/* <!-- ACCORDION END --> */}
               </div>
             </div>
             <div className="col-md-6">
               <div className="coupon-accordion">
                 {/* <!-- ACCORDION START --> */}
-                <h3>Have a coupon? <span onClick={()=> setCheckoutCoupon(!checkoutCoupon)} id="showcoupon">Click here to enter your code</span></h3>
-                {checkoutCoupon && <div id="checkout_coupon" className="coupon-checkout-content">
-                  <div className="coupon-info">
-                    <form action="#">
-                      <p className="checkout-coupon">
-                        <input type="text" placeholder="Coupon Code" />
-                        <button className="os-btn os-btn-black" type="submit">Apply Coupon</button>
-                      </p>
-                    </form>
+                <h3>
+                  Have a coupon?{" "}
+                  <span
+                    onClick={() => setCheckoutCoupon(!checkoutCoupon)}
+                    id="showcoupon"
+                  >
+                    Click here to enter your code
+                  </span>
+                </h3>
+                {checkoutCoupon && (
+                  <div id="checkout_coupon" className="coupon-checkout-content">
+                    <div className="coupon-info">
+                      <form action="#">
+                        <p className="checkout-coupon">
+                          <input type="text" placeholder="Coupon Code" />
+                          <button className="os-btn os-btn-black" type="submit">
+                            Apply Coupon
+                          </button>
+                        </p>
+                      </form>
+                    </div>
                   </div>
-                </div>}
+                )}
                 {/* <!-- ACCORDION END --> */}
               </div>
             </div>

@@ -9,10 +9,9 @@ import useCartInfo from "../../hooks/use-cart-info";
 import useSticky from "../../hooks/use-sticky";
 import { search_bar } from "../../redux/features/search-slice";
 import Menu from "./menu";
-import logo from '../../public/assets/img/logo/log-3.webp';
+import logo from "../../public/assets/img/logo/log-3.webp";
 import useGlobalContext from "../../hooks/use-context";
 import Sidebar from "../../components/common/sidebar";
-
 
 const HeaderFour = () => {
   const dispatch = useDispatch();
@@ -22,8 +21,11 @@ const HeaderFour = () => {
   return (
     <>
       <header>
-        <div id="header-sticky" className={`header__area header__transparent header__transparent-2 pt-15 pb-15 box-25 
-        ${headerSticky ? 'sticky' : ''}`}>
+        <div
+          id="header-sticky"
+          className={`header__area header__transparent header__transparent-2 pt-15 pb-15 box-25 
+        ${headerSticky ? "sticky" : ""}`}
+        >
           <div className="container-fluid">
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-md-4 col-sm-3">
@@ -44,27 +46,38 @@ const HeaderFour = () => {
               </div>
               <div className="col-xl-3 col-lg-4 col-md-7 col-sm-8">
                 <div className="header__right p-relative d-flex justify-content-between justify-content-sm-end align-items-center">
-
                   <div className="mobile-menu-btn d-lg-none">
-                    <button className="mobile-menu-toggle" onClick={() => setShowSidebar(true)}>
+                    <button
+                      className="mobile-menu-toggle"
+                      onClick={() => setShowSidebar(true)}
+                    >
                       <i className="fas fa-bars"></i>
                     </button>
                   </div>
                   <div className="header__action">
                     <ul>
                       <li>
-                        <button className="search-toggle" onClick={() => dispatch(search_bar(true))}>
-                          <i className="fas fa-search"></i></button>
+                        <button
+                          className="search-toggle"
+                          onClick={() => dispatch(search_bar(true))}
+                        >
+                          <i className="fas fa-search"></i>
+                        </button>
                       </li>
                       <li>
                         <button className="cart">
-                          <i className="fas fa-cart-plus"></i><span className="cart-number-2">{quantity}</span>
+                          <i className="fas fa-cart-plus"></i>
+                          <span className="cart-number-2">{quantity}</span>
                         </button>
                         {/* cart area start */}
                         <Cart />
                         {/* cart area end */}
                       </li>
-                      <li> <button ><i className="fas fa-user"></i></button>
+                      <li>
+                        {" "}
+                        <button>
+                          <i className="fas fa-user"></i>
+                        </button>
                         <ul className="extra-info">
                           {extra_info.map((item, index) => (
                             <li key={index}>
@@ -75,7 +88,9 @@ const HeaderFour = () => {
                                 <ul>
                                   {item.listItems.map((list, index) => (
                                     <li key={index}>
-                                      <Link href={`${list.link}`}><a>{`${list.title}`}</a></Link>
+                                      <Link href={`${list.link}`}>
+                                        <a>{`${list.title}`}</a>
+                                      </Link>
                                     </li>
                                   ))}
                                 </ul>
@@ -100,7 +115,6 @@ const HeaderFour = () => {
       {/* sidebar start */}
       <Sidebar />
       {/* sidebar end */}
-
     </>
   );
 };

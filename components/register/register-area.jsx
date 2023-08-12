@@ -1,4 +1,4 @@
-import RegisterForm from '../common/form/register-form';
+import RegisterForm from "../common/form/register-form";
 
 const RegisterArea = () => {
   return (
@@ -10,7 +10,7 @@ const RegisterArea = () => {
               <div className="basic-login">
                 <h3 className="text-center mb-60">Signup From Here</h3>
                 {/* register form start */}
-                <RegisterForm/>
+                <RegisterForm />
                 {/* register form end */}
               </div>
             </div>

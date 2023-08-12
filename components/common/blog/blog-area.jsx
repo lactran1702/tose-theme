@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import { blogs } from "../../../data";
-import Link from 'next/link';
+import Link from "next/link";
 
-const blog_items = blogs.filter(blog => blog.blog_one);
+const blog_items = blogs.filter((blog) => blog.blog_one);
 
 // slider setting
 const settings = {
@@ -17,31 +17,37 @@ const settings = {
       breakpoint: 992,
       settings: {
         slidesToShow: 2,
-      }
+      },
     },
     {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-      }
+      },
     },
-  ]
+  ],
 };
-
 
 const BlogArea = ({ home_three, h4 }) => {
   return (
     <>
-      <section className={`blog__area pb-70 ${home_three ? 'pt-90' : ''}`}>
-        <div className={`container ${h4 ? 'custom-container' : ''}`}>
+      <section className={`blog__area pb-70 ${home_three ? "pt-90" : ""}`}>
+        <div className={`container ${h4 ? "custom-container" : ""}`}>
           <div className="row">
             <div className="col-xl-12">
-              <div className={`section__title-wrapper text-center mb-55 ${h4 ? 'p-relative' : ''}`}>
+              <div
+                className={`section__title-wrapper text-center mb-55 ${
+                  h4 ? "p-relative" : ""
+                }`}
+              >
                 <div className="section__title mb-10">
                   <h2>Our Blog Posts</h2>
                 </div>
                 <div className="section__sub-title">
-                  <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
+                  <p>
+                    Mirum est notare quam littera gothica quam nunc putamus
+                    parum claram!
+                  </p>
                 </div>
               </div>
             </div>
@@ -49,11 +55,10 @@ const BlogArea = ({ home_three, h4 }) => {
           <div className="row">
             <div className="col-xl-12">
               <div className="blog__slider owl-carousel">
-
                 <Slider {...settings}>
-                  {
-                    blog_items.map((item, index) => {
-                      return <div key={index} className="blog__item mb-30">
+                  {blog_items.map((item, index) => {
+                    return (
+                      <div key={index} className="blog__item mb-30">
                         <div className="blog__thumb fix">
                           <Link href={`/blog-details/${item.id}`}>
                             <a className="w-img">
@@ -68,7 +73,9 @@ const BlogArea = ({ home_three, h4 }) => {
                             </Link>
                           </h4>
                           <div className="blog__meta">
-                            <span>By <a href="#">{item.author}</a></span>
+                            <span>
+                              By <a href="#">{item.author}</a>
+                            </span>
                             <span>/ {item.date}</span>
                           </div>
                           <p>{item.desc}</p>
@@ -77,10 +84,9 @@ const BlogArea = ({ home_three, h4 }) => {
                           </Link>
                         </div>
                       </div>
-                    })
-                  }
+                    );
+                  })}
                 </Slider>
-
               </div>
             </div>
           </div>

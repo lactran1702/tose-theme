@@ -7,7 +7,6 @@ import { single_product } from "../../redux/features/product-slice";
 import { add_to_wishlist } from "../../redux/features/wishlist-slice";
 import ProductModal from "../common/modal/product-modal";
 
-
 // slider setting
 const settings = {
   autoplay: true,
@@ -21,32 +20,31 @@ const settings = {
       breakpoint: 1400,
       settings: {
         slidesToShow: 5,
-      }
+      },
     },
     {
       breakpoint: 1200,
       settings: {
         slidesToShow: 3,
-      }
+      },
     },
     {
       breakpoint: 992,
       settings: {
         slidesToShow: 2,
-      }
+      },
     },
     {
       breakpoint: 576,
       settings: {
         slidesToShow: 1,
-      }
+      },
     },
-  ]
+  ],
 };
 
 const SaleOffArea = () => {
-
-  const saleOffProduct = useSelector(state => state.products.products);
+  const saleOffProduct = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
   // const saleOffProduct = products.map(item => item.product).slice(0,7);
 
@@ -61,7 +59,10 @@ const SaleOffArea = () => {
                   <h2>Sale Off</h2>
                 </div>
                 <div className="section__sub-title">
-                  <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
+                  <p>
+                    Mirum est notare quam littera gothica quam nunc putamus
+                    parum claram!
+                  </p>
                 </div>
               </div>
             </div>
@@ -71,76 +72,110 @@ const SaleOffArea = () => {
           <div className="row">
             <div className="col-xl-12">
               <div className="sale__area-slider-2">
-
                 <Slider {...settings}>
-                  {
-                    saleOffProduct.slice(0, 7).map((item, index) => {
-                      return <div key={index}>
+                  {saleOffProduct.slice(0, 7).map((item, index) => {
+                    return (
+                      <div key={index}>
                         <div className="sale__item">
-                          {
-                            item.product.map((product, index) => (
-                              <div key={index} className="product__wrapper mb-60">
-                                <div className="product__thumb">
+                          {item.product.map((product, index) => (
+                            <div key={index} className="product__wrapper mb-60">
+                              <div className="product__thumb">
+                                <Link href={`/product-details/${product.id}`}>
+                                  <a className="w-img">
+                                    <img src={product.img} alt="product-img" />
+                                    {product.thumb_img && (
+                                      <img
+                                        className="product__thumb-2"
+                                        src={product.thumb_img}
+                                        alt="product-img"
+                                      />
+                                    )}
+                                  </a>
+                                </Link>
+                                <div className="product__action transition-3">
+                                  <button
+                                    onClick={() =>
+                                      dispatch(add_to_wishlist(product))
+                                    }
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="Add to Wishlist"
+                                  >
+                                    <i className="fal fa-heart"></i>
+                                  </button>
+
                                   <Link href={`/product-details/${product.id}`}>
-                                    <a className="w-img">
-                                      <img src={product.img} alt="product-img" />
-                                      {product.thumb_img &&
-                                        <img className="product__thumb-2" src={product.thumb_img} alt="product-img" />
-                                      }
+                                    <a
+                                      data-bs-toggle="tooltip"
+                                      data-bs-placement="top"
+                                      title="Details"
+                                    >
+                                      <i className="fal fa-link"></i>
                                     </a>
                                   </Link>
-                                  <div className="product__action transition-3">
-                                    <button onClick={() => dispatch(add_to_wishlist(product))} data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist">
-                                      <i className="fal fa-heart"></i>
-                                    </button>
-                                    
-                                    <Link href={`/product-details/${product.id}`}>
-                                      <a data-bs-toggle="tooltip" data-bs-placement="top" title="Details">
-                                        <i className="fal fa-link"></i>
-                                      </a>
-                                    </Link>
 
-                                    <a onClick={() => dispatch(single_product(product.id))} href="#" data-bs-toggle="modal" data-bs-target="#productModalId">
-                                      <i className="fal fa-search"></i>
-                                    </a>
-                                  </div>
-
-                                  {product.product__sale && <div className="product__sale">
-                                    {product.product__sale.map((item, index) => (
-                                      <span key={index} className={`${item === 'new' ? 'new' : 'percent'}`}>
-                                        {item}
-                                      </span>
-                                    ))}
-                                  </div>}
-
+                                  <a
+                                    onClick={() =>
+                                      dispatch(single_product(product.id))
+                                    }
+                                    href="#"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#productModalId"
+                                  >
+                                    <i className="fal fa-search"></i>
+                                  </a>
                                 </div>
-                                <div className="product__content p-relative">
-                                  <div className="product__content-inner">
-                                    <h4>
-                                      <Link href={`/product-details/${product.id}`}>
-                                        <a>{product.title}</a>
-                                      </Link>
-                                    </h4>
-                                    <div className="product__price transition-3">
-                                      <span>${product.price}.00</span>
-                                      <span className="old-price">${product.old_price}.00</span>
-                                    </div>
+
+                                {product.product__sale && (
+                                  <div className="product__sale">
+                                    {product.product__sale.map(
+                                      (item, index) => (
+                                        <span
+                                          key={index}
+                                          className={`${
+                                            item === "new" ? "new" : "percent"
+                                          }`}
+                                        >
+                                          {item}
+                                        </span>
+                                      )
+                                    )}
                                   </div>
-                                  <div className="add-cart p-absolute transition-3">
-                                    <button onClick={() => dispatch(cart_product(product))}>+ Add to Cart</button>
+                                )}
+                              </div>
+                              <div className="product__content p-relative">
+                                <div className="product__content-inner">
+                                  <h4>
+                                    <Link
+                                      href={`/product-details/${product.id}`}
+                                    >
+                                      <a>{product.title}</a>
+                                    </Link>
+                                  </h4>
+                                  <div className="product__price transition-3">
+                                    <span>${product.price}.00</span>
+                                    <span className="old-price">
+                                      ${product.old_price}.00
+                                    </span>
                                   </div>
+                                </div>
+                                <div className="add-cart p-absolute transition-3">
+                                  <button
+                                    onClick={() =>
+                                      dispatch(cart_product(product))
+                                    }
+                                  >
+                                    + Add to Cart
+                                  </button>
                                 </div>
                               </div>
-                            ))
-                          }
-
+                            </div>
+                          ))}
                         </div>
                       </div>
-                    })
-                  }
-
+                    );
+                  })}
                 </Slider>
-
               </div>
             </div>
           </div>
@@ -150,7 +185,6 @@ const SaleOffArea = () => {
       {/* product modal start */}
       <ProductModal />
       {/* product modal end */}
-
     </>
   );
 };

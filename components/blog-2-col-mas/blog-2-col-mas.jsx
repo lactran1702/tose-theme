@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
-import { blogs } from '../../data';
+import { blogs } from "../../data";
 
-const items = blogs.filter(blog => blog.masonry).reverse();
+const items = blogs.filter((blog) => blog.masonry).reverse();
 
 const BlogTwoCalMas = () => {
   return (
@@ -11,7 +11,7 @@ const BlogTwoCalMas = () => {
       <section className="blog__area pt-100 pb-100">
         <div className="container">
           <div className="row">
-            <ResponsiveMasonry columnsCountBreakPoints={{ 0: 1, 750: 2, }} >
+            <ResponsiveMasonry columnsCountBreakPoints={{ 0: 1, 750: 2 }}>
               <Masonry gutter="25px">
                 {items.map((item, index) => (
                   <div key={index} className="">
@@ -30,7 +30,9 @@ const BlogTwoCalMas = () => {
                           </Link>
                         </h4>
                         <div className="blog__meta">
-                          <span>By <a href="#">{item.author}</a></span>
+                          <span>
+                            By <a href="#">{item.author}</a>
+                          </span>
                           <span>/ {item.date}</span>
                         </div>
                         <p>{item.desc}</p>
@@ -44,7 +46,6 @@ const BlogTwoCalMas = () => {
               </Masonry>
             </ResponsiveMasonry>
           </div>
-
         </div>
       </section>
     </>

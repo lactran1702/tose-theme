@@ -1,23 +1,22 @@
 import ContactForm from "../common/form/contact-form";
 
-
 const contactInfo = [
   {
-    icon: 'fal fa-map-marker-alt',
-    title: 'Address:',
-    subtitle: '1234 Heaven Stress, Beverly Hill, Melbourne, USA.'
+    icon: "fal fa-map-marker-alt",
+    title: "Address:",
+    subtitle: "1234 Heaven Stress, Beverly Hill, Melbourne, USA.",
   },
   {
-    icon: 'fal fa-envelope-open-text',
-    title: 'Email:',
-    subtitle: 'Contact@erentheme.com'
+    icon: "fal fa-envelope-open-text",
+    title: "Email:",
+    subtitle: "Contact@erentheme.com",
   },
   {
-    icon: 'fal fa-phone-alt',
-    title: 'Number Phone:',
-    subtitle: '(800) 123 456 789, (800) 987 654 321'
+    icon: "fal fa-phone-alt",
+    title: "Number Phone:",
+    subtitle: "(800) 123 456 789, (800) 987 654 321",
   },
-]
+];
 
 const ContactArea = () => {
   return (
@@ -29,7 +28,7 @@ const ContactArea = () => {
               <div className="contact__info">
                 <h3>Find us here.</h3>
                 <ul className="mb-55">
-                  {contactInfo.map(item => (
+                  {contactInfo.map((item) => (
                     <li key={item.title} className="d-flex mb-35">
                       <div className="contact__info-icon mr-20">
                         <i className={item.icon}></i>
@@ -41,15 +40,42 @@ const ContactArea = () => {
                     </li>
                   ))}
                 </ul>
-                <p>Outstock is a premium Templates theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive and retina ready. Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                <p>
+                  Outstock is a premium Templates theme with advanced admin
+                  module. It’s extremely customizable, easy to use and fully
+                  responsive and retina ready. Vel illum dolore eu feugiat nulla
+                  facilisis at vero eros et accumsan et iusto odio dignissim qui
+                  blandit praesent luptatum zzril delenit augue duis dolore te
+                  feugait nulla facilisi.
+                </p>
 
                 <div className="contact__social">
                   <ul>
-                    <li><a href="#"><i className="fab fa-dribbble"></i></a></li>
-                    <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fab fa-behance"></i></a></li>
-                    <li><a href="#"><i className="fas fa-share-alt"></i></a></li>
+                    <li>
+                      <a href="#">
+                        <i className="fab fa-dribbble"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fab fa-behance"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fas fa-share-alt"></i>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -58,7 +84,7 @@ const ContactArea = () => {
               <div className="contact__form">
                 <h3>Contact Us.</h3>
                 {/* contact form stat */}
-                <ContactForm/>
+                <ContactForm />
                 {/* contact form stat */}
                 <p className="ajax-response"></p>
               </div>
@@ -71,4 +97,3 @@ const ContactArea = () => {
 };
 
 export default ContactArea;
-

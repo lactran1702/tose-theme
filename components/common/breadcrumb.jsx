@@ -1,11 +1,19 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
-const Breadcrumb = ({img,title,subtitle}) => {
+const Breadcrumb = ({ img, title, subtitle }) => {
   return (
     <>
-      <section className="page__title p-relative d-flex align-items-center" style={{background:`url( ${img ? img 
-      : '/assets/img/page-title/page-title-1.jpg'})`,backgroundSize:'cover',backgroundPosition:'center'}}>
+      <section
+        className="page__title p-relative d-flex align-items-center"
+        style={{
+          background: `url( ${
+            img ? img : "/assets/img/page-title/page-title-1.jpg"
+          })`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
@@ -19,7 +27,13 @@ const Breadcrumb = ({img,title,subtitle}) => {
                           <a>Home</a>
                         </Link>
                       </li>
-                      <li className="breadcrumb-item active" aria-current="page"> {subtitle}</li>
+                      <li
+                        className="breadcrumb-item active"
+                        aria-current="page"
+                      >
+                        {" "}
+                        {subtitle}
+                      </li>
                     </ol>
                   </nav>
                 </div>

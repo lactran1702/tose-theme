@@ -1,9 +1,9 @@
-import { blogs } from '../../data';
-import Footer from '../../layout/footers/footer';
-import Header from '../../layout/headers/header';
-import BlogDetailsArea from './blog-details-area';
+import { blogs } from "../../data";
+import Footer from "../../layout/footers/footer";
+import Header from "../../layout/headers/header";
+import BlogDetailsArea from "./blog-details-area";
 
-const item = blogs[0]
+const item = blogs[0];
 
 const index = () => {
   return (

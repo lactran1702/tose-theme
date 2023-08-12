@@ -1,23 +1,22 @@
 import Slider from "react-slick";
 
-
 const testimonial_data = [
   {
     id: 1,
-    img: 'assets/img/testimonial/testi1.webp',
-    desc: 'Great theme, extended super and fast professional support. easy to use, flexible, visual composer and more functional plugins on board. Yes a real good, strong theme with structured coding. Enjoy it! friendly and super good!'
+    img: "assets/img/testimonial/testi1.webp",
+    desc: "Great theme, extended super and fast professional support. easy to use, flexible, visual composer and more functional plugins on board. Yes a real good, strong theme with structured coding. Enjoy it! friendly and super good!",
   },
   {
     id: 2,
-    img: 'assets/img/testimonial/testi2.webp',
-    desc: 'Great theme, extended super and fast professional support. easy to use, flexible, visual composer and more functional plugins on board. Yes a real good, strong theme with structured coding. Enjoy it! friendly and super good!'
+    img: "assets/img/testimonial/testi2.webp",
+    desc: "Great theme, extended super and fast professional support. easy to use, flexible, visual composer and more functional plugins on board. Yes a real good, strong theme with structured coding. Enjoy it! friendly and super good!",
   },
   {
     id: 3,
-    img: 'assets/img/testimonial/testi3.webp',
-    desc: 'Great theme, extended super and fast professional support. easy to use, flexible, visual composer and more functional plugins on board. Yes a real good, strong theme with structured coding. Enjoy it! friendly and super good!'
+    img: "assets/img/testimonial/testi3.webp",
+    desc: "Great theme, extended super and fast professional support. easy to use, flexible, visual composer and more functional plugins on board. Yes a real good, strong theme with structured coding. Enjoy it! friendly and super good!",
   },
-]
+];
 
 // slick setting
 const settings = {
@@ -38,7 +37,11 @@ const Testimonial = () => {
                 <div className="col-xl-12">
                   <div className="section__wrapper text-center mb-40">
                     <h3 className="section__title-2">OUR TESTIMONIAL</h3>
-                    <p className="sub-title">Commodo sociosqu venenatis cras dolor sagittis integer luctus sem primis eget maecenas sed urna malesuada consectetuer</p>
+                    <p className="sub-title">
+                      Commodo sociosqu venenatis cras dolor sagittis integer
+                      luctus sem primis eget maecenas sed urna malesuada
+                      consectetuer
+                    </p>
                   </div>
                 </div>
               </div>

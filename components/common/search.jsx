@@ -1,24 +1,31 @@
-import Link from 'next/link';
-import { useSelector, useDispatch } from 'react-redux';
+import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
 
-import { search_bar } from '../../redux/features/search-slice';
+import { search_bar } from "../../redux/features/search-slice";
 
 const Search = () => {
-  const search = useSelector(state => state.search.isOpen);
+  const search = useSelector((state) => state.search.isOpen);
   const dispatch = useDispatch();
-  const handleSubmit = e => {
-    e.preventDefault()
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       {/* <!-- search area start --> */}
-      <section className={`header__search white-bg transition-3 ${search ? 'search-opened' : ''}`}>
+      <section
+        className={`header__search white-bg transition-3 ${
+          search ? "search-opened" : ""
+        }`}
+      >
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
               <div className="header__search-inner text-center">
                 <form onSubmit={handleSubmit}>
-                  <div className="header__search-btn" onClick={() => dispatch(search_bar(false))}>
+                  <div
+                    className="header__search-btn"
+                    onClick={() => dispatch(search_bar(false))}
+                  >
                     <button className="header__search-btn-close">
                       <i className="fal fa-times"></i>
                     </button>
@@ -45,7 +52,7 @@ const Search = () => {
                       </li>
                       <li>
                         <Link href="/shop">
-                          <a >Tablet</a>
+                          <a>Tablet</a>
                         </Link>
                       </li>
                       <li>
@@ -62,18 +69,21 @@ const Search = () => {
                   </div>
                   <div className="header__search-input p-relative">
                     <input type="text" placeholder="Search for products... " />
-                    <button type="button"><i className="far fa-search"></i></button>
+                    <button type="button">
+                      <i className="far fa-search"></i>
+                    </button>
                   </div>
                 </form>
-
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* body overlay */}
-      <div onClick={() => dispatch(search_bar(false))}
-        className={`body-overlay transition-3 ${search ? 'opened' : ''}`}></div>
+      <div
+        onClick={() => dispatch(search_bar(false))}
+        className={`body-overlay transition-3 ${search ? "opened" : ""}`}
+      ></div>
       {/* <!-- search area end --> */}
     </>
   );

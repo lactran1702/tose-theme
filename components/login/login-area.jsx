@@ -1,4 +1,4 @@
-import LoginForm from '../common/form/login-form';
+import LoginForm from "../common/form/login-form";
 
 const LoginArea = () => {
   return (
@@ -10,7 +10,7 @@ const LoginArea = () => {
               <div className="basic-login">
                 <h3 className="text-center mb-60">Login From Here</h3>
                 {/* login form start */}
-                <LoginForm/>
+                <LoginForm />
                 {/* login form end */}
               </div>
             </div>

@@ -2,10 +2,9 @@ import BlogItems from "../common/blog/blog-items";
 import BlogSidebar from "../common/blog/blog-sidebar";
 import { blogs } from "../../data";
 
-const items  = blogs.slice(0,8)
+const items = blogs.slice(0, 8);
 
 const BlogArea = () => {
-  
   return (
     <>
       <section className="blog__area pt-100 pb-100">

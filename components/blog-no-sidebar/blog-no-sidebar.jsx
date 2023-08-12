@@ -1,7 +1,7 @@
 import { blogs } from "../../data";
 import BlogItems from "../common/blog/blog-items";
 
-const items = blogs.slice(0, 8)
+const items = blogs.slice(0, 8);
 
 const BlogNoSidebar = () => {
   return (

@@ -12,18 +12,18 @@ import FooterThree from "../../layout/footers/footer-3";
 const index = () => {
   return (
     <>
-      <HeaderFour/>
+      <HeaderFour />
       <main>
-        <HeroSlider/>
-        <BannerThree/>
-        <FashionProduct/>
-        <VideoBox/>
-        <FeatureProducts/>
-        <Testimonial/>
-        <Blogs/>
-        <Brands/>
+        <HeroSlider />
+        <BannerThree />
+        <FashionProduct />
+        <VideoBox />
+        <FeatureProducts />
+        <Testimonial />
+        <Blogs />
+        <Brands />
       </main>
-      <FooterThree/>
+      <FooterThree />
     </>
   );
 };

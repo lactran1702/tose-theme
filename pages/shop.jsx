@@ -1,11 +1,11 @@
-import SEO from '../components/seo';
-import Wrapper from '../layout/wrapper';
-import ShopMain from '../components/shop';
+import SEO from "../components/seo";
+import Wrapper from "../layout/wrapper";
+import ShopMain from "../components/shop";
 
 const index = () => {
   return (
     <Wrapper>
-      <SEO pageTitle={'Shop'} />
+      <SEO pageTitle={"Shop"} />
       <ShopMain />
     </Wrapper>
   );

@@ -1,15 +1,23 @@
-import ReactPaginate from 'react-paginate';
+import ReactPaginate from "react-paginate";
 
-const Pagination = ({handlePageClick,pageCount,focusPage}) => {
+const Pagination = ({ handlePageClick, pageCount, focusPage }) => {
   return (
     <ReactPaginate
-      nextLabel={<><i className="fal fa-angle-right"></i></>}
+      nextLabel={
+        <>
+          <i className="fal fa-angle-right"></i>
+        </>
+      }
       onPageChange={handlePageClick}
       pageRangeDisplayed={3}
       marginPagesDisplayed={2}
       pageCount={pageCount}
       forcePage={focusPage}
-      previousLabel={<><i className="fal fa-angle-left"></i></>}
+      previousLabel={
+        <>
+          <i className="fal fa-angle-left"></i>
+        </>
+      }
       pageClassName="page-item"
       pageLinkClassName="page-link"
       previousClassName="page-item"
