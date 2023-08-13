@@ -83,7 +83,7 @@ const ProductItems = () => {
                 <div className="product__banner-content p-absolute">
                   <h4>
                     <Link href={`/product-details/${prd.id}`}>
-                      <a>{prd.title}</a>
+                      <a>{prd.name}</a>
                     </Link>
                   </h4>
                   <Link href={`/product-details/${prd.id}`}>

@@ -73,7 +73,7 @@ const AppProvider = ({ children }) => {
       setItems(newProducts);
     }
     if (e.target.value === "Short by featured") {
-      const newProducts = products.filter((item) => item.feature_prd);
+      const newProducts = products.filter((item) => item.bestSelling);
       setItems(newProducts);
     }
     if (e.target.value === "Short by price") {

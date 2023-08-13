@@ -1,4 +1,4 @@
-export const productBk = [
+const productBk = [
   {
     product: [
       {
@@ -242,3 +242,5 @@ export const productBk = [
     ],
   },
 ];
+
+export default productBk;

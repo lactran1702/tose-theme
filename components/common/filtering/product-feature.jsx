@@ -1,10 +1,14 @@
-import { selectProducts } from '../../../redux/features/product-slice';
-import { useSelector } from 'react-redux';
-import Link from 'next/link';
+import { selectProducts } from "../../../redux/features/product-slice";
+import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const ProductFeature = () => {
   const products = useSelector(selectProducts);
-  const featurePrd = products.map(prd => prd.product).flat().filter(item => item.feature_prd).slice(0, 2);
+  const featurePrd = products
+    .map((prd) => prd.product)
+    .flat()
+    .filter((item) => item.bestSelling)
+    .slice(0, 2);
 
   return (
     <>
@@ -33,7 +37,11 @@ const ProductFeature = () => {
                       </h5>
                       <div className="price">
                         <span>${product.price}</span>
-                        {product.old_price && <span className="price-old">${product.old_price}</span>}
+                        {/* {product.old_price && (
+                          <span className="price-old">
+                            ${product.old_price}
+                          </span>
+                        )} */}
                       </div>
                     </div>
                   </div>

@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
 import Image from "next/image";
 
-import { productBk } from "../../data/products-bk";
-
-// import { single_product } from "../../redux/features/product-slice";
+import { single_product } from "../../redux/features/product-slice";
 import { SampleNextArrow, SamplePrevArrow } from "../../utils/slider-arrow";
 
 // slick setting
@@ -38,24 +36,15 @@ const settings = {
 };
 
 const FeatureProducts = () => {
-  // const products = useSelector((state) => state.products.products);
-  // const fashion_products = products
-  //   .map((item) => item.product)
-  //   .flat()
-  //   .filter((item) => item.feature_prd);
-  // const dispatch = useDispatch();
-
-  const fashion_products = productBk
+  const products = useSelector((state) => state.products.products);
+  const fashion_products = products
     .map((item) => item.product)
     .flat()
     .filter((item) => item.bestSelling);
-
-  // console.log(fashion_products);
+  const dispatch = useDispatch();
 
   return (
     <>
-      {/* {fashion_products} */}
-
       <div className="product__slider-area pt-95 pb-60">
         <div className="container custom-container-2">
           <div className="row">
@@ -97,10 +86,9 @@ const FeatureProducts = () => {
                                   <i className="fal fa-plus"></i> Select Option
                                 </a>
                               </Link>
-                              {/* TODO */}
                               <a
                                 className="action-btn"
-                                // onClick={() => dispatch(single_product(prd.id))}
+                                onClick={() => dispatch(single_product(prd.id))}
                                 href="#"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productModalId"
@@ -135,7 +123,7 @@ const FeatureProducts = () => {
                               </div>
                               <h4>
                                 <Link href={`/product-details/${prd.id}`}>
-                                  <a>{prd.title}</a>
+                                  <a>{prd.name}</a>
                                 </Link>
                               </h4>
                               <div className="product__price-3">

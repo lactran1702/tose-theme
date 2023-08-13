@@ -1,19 +1,19 @@
 import Link from "next/link";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   selectProducts,
   single_product,
 } from "../../redux/features/product-slice";
 import ProductModal from "../common/modal/product-modal";
+import Image from "next/image";
 
 const FashionProduct = () => {
   const products = useSelector(selectProducts);
   const fashion_products = products
     .map((item) => item.product)
     .flat()
-    .filter((item) => item.f_prd);
+    .filter((item) => item.bestSelling);
   return (
     <>
       <div className="product__view-area pt-60 pb-60">
@@ -77,11 +77,12 @@ const SingleFashionPrd = ({ prd }) => {
             <div className="product__thumb">
               <Link href={`/product-details/${prd.id}`}>
                 <a className="w-img">
-                  <img src={prd.img} alt="product-img" />
-                  <img
-                    className="product__thumb-2"
-                    src={prd.thumb_img}
-                    alt="product-img"
+                  <Image
+                    src={prd.image}
+                    width="200"
+                    height="200"
+                    layout="responsive"
+                    alt={prd.name}
                   />
                 </a>
               </Link>
@@ -129,7 +130,7 @@ const SingleFashionPrd = ({ prd }) => {
                 </div>
                 <h4>
                   <Link href={`/product-details/${prd.id}`}>
-                    <a>{prd.title}</a>
+                    <a>{prd.name}</a>
                   </Link>
                 </h4>
                 <div className="product__price-3">
@@ -158,12 +159,18 @@ const FashionBigProduct = ({ prdNumber }) => {
   const fashion_big_prd = products
     .map((item) => item.product)
     .flat()
-    .filter((item) => item.f_prd_big);
+    .filter((item) => item.bestSelling);
   return (
     <div className="product__big-image effectThree mb-40">
       <Link href={`/product-details/${fashion_big_prd[prdNumber].id}`}>
         <a>
-          <img src={fashion_big_prd[prdNumber].img} alt="" />
+          <Image
+            src={`${fashion_big_prd[prdNumber].image}`}
+            width="200"
+            height="200"
+            layout="responsive"
+            alt={`${fashion_big_prd[prdNumber].name}`}
+          />
         </a>
       </Link>
     </div>
