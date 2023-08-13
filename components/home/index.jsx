@@ -1,27 +1,29 @@
-import Header from "../../layout/headers/header";
-import BlogArea from "../common/blog/blog-area";
-import Brands from "../common/brands/brands";
-import Banner from "../common/banner/banner";
-import BannerTwo from "../common/banner/banner-2";
-import HeroSlider from "../common/hero-slider";
-import Products from "../common/product/trending-products";
-import SaleOff from "../common/product/sale-off";
-import SubscribeArea from "../common/subscribe-area";
-import Footer from "../../layout/footers/footer";
+import HeaderFour from "../../layout/headers/header-4";
+import BannerThree from "../common/banner/banner-3";
+import Blogs from "./blogs";
+import Brands from "../common/brands/brands-2";
+import FashionProduct from "./fashion-prd";
+import FeatureProducts from "./feature-products";
+import HeroSlider from "./hero-slider";
+import Testimonial from "./testimonial";
+import VideoBox from "./video-box";
+import FooterThree from "../../layout/footers/footer-3";
 
 const index = () => {
   return (
     <>
-      <Header />
-      <HeroSlider />
-      <Banner />
-      <Products />
-      <BannerTwo />
-      <SaleOff />
-      <Brands />
-      <BlogArea />
-      <SubscribeArea />
-      <Footer />
+      <HeaderFour />
+      <main>
+        <HeroSlider />
+        <BannerThree />
+        <FashionProduct />
+        <VideoBox />
+        <FeatureProducts />
+        <Testimonial />
+        <Blogs />
+        <Brands />
+      </main>
+      <FooterThree />
     </>
   );
 };

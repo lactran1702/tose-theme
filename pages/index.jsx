@@ -1,12 +1,12 @@
 import SEO from "../components/seo";
 import Wrapper from "../layout/wrapper";
-import HomeMain from "../components/home";
+import HomeSevenMain from "../components/home-7";
 
 const index = () => {
   return (
     <Wrapper>
-      <SEO pageTitle={"Home Default"} />
-      <HomeMain />
+      <SEO pageTitle={"Home Seven"} />
+      <HomeSevenMain />
     </Wrapper>
   );
 };

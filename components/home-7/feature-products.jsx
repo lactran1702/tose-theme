@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
+import Image from "next/image";
 
-import { single_product } from "../../redux/features/product-slice";
+import { productBk } from "../../data/products-bk";
+
+// import { single_product } from "../../redux/features/product-slice";
 import { SampleNextArrow, SamplePrevArrow } from "../../utils/slider-arrow";
 
 // slick setting
@@ -35,14 +38,24 @@ const settings = {
 };
 
 const FeatureProducts = () => {
-  const products = useSelector((state) => state.products.products);
-  const fashion_products = products
+  // const products = useSelector((state) => state.products.products);
+  // const fashion_products = products
+  //   .map((item) => item.product)
+  //   .flat()
+  //   .filter((item) => item.feature_prd);
+  // const dispatch = useDispatch();
+
+  const fashion_products = productBk
     .map((item) => item.product)
     .flat()
-    .filter((item) => item.feature_prd);
-  const dispatch = useDispatch();
+    .filter((item) => item.bestSelling);
+
+  // console.log(fashion_products);
+
   return (
     <>
+      {/* {fashion_products} */}
+
       <div className="product__slider-area pt-95 pb-60">
         <div className="container custom-container-2">
           <div className="row">
@@ -69,11 +82,12 @@ const FeatureProducts = () => {
                           <div className="product__thumb">
                             <Link href={`/product-details/${prd.id}`}>
                               <a className="w-img">
-                                <img src={prd.img} alt="product-img" />
-                                <img
-                                  className="product__thumb-2"
-                                  src={prd.thumb_img}
-                                  alt="product-img"
+                                <Image
+                                  src={prd.image}
+                                  layout="responsive"
+                                  width={200}
+                                  height={200}
+                                  alt={prd.name}
                                 />
                               </a>
                             </Link>
@@ -83,10 +97,10 @@ const FeatureProducts = () => {
                                   <i className="fal fa-plus"></i> Select Option
                                 </a>
                               </Link>
-
+                              {/* TODO */}
                               <a
                                 className="action-btn"
-                                onClick={() => dispatch(single_product(prd.id))}
+                                // onClick={() => dispatch(single_product(prd.id))}
                                 href="#"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productModalId"
@@ -94,9 +108,9 @@ const FeatureProducts = () => {
                                 <i className="fal fa-eye"></i>
                               </a>
                             </div>
-                            {prd.new && (
+                            {prd.bestSelling && (
                               <div className="product__sale product__sale-3">
-                                <span className="new">new</span>
+                                <span className="new">Best Selling</span>
                               </div>
                             )}
                           </div>
@@ -126,11 +140,11 @@ const FeatureProducts = () => {
                               </h4>
                               <div className="product__price-3">
                                 <span>${prd.price}.00</span>
-                                {prd.old_price && (
+                                {/* {prd.old_price && (
                                   <span className="old-price">
                                     <del> ${prd.old_price}.00</del>
                                   </span>
-                                )}
+                                )} */}
                               </div>
                             </div>
                           </div>

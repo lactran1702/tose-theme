@@ -2,17 +2,17 @@ const nav_menus = [
   {
     link: "/",
     title: "Home",
-    hasDropdown: true,
+    hasDropdown: false,
     megamenu: false,
-    dropdownItems: [
-      { link: "/", title: "Home Style 1" },
-      { link: "/home-2", title: "Home Style 2" },
-      { link: "/home-3", title: "Home Style 3" },
-      { link: "/home-4", title: "Home Style 4" },
-      { link: "/home-5", title: "Home Style 5" },
-      { link: "/home-6", title: "Home Style 6" },
-      { link: "/home-7", title: "Home Style 7" },
-    ],
+    // dropdownItems: [
+    //   { link: "/", title: "Home Style 1" },
+    //   { link: "/home-2", title: "Home Style 2" },
+    //   { link: "/home-3", title: "Home Style 3" },
+    //   { link: "/home-4", title: "Home Style 4" },
+    //   { link: "/home-5", title: "Home Style 5" },
+    //   { link: "/home-6", title: "Home Style 6" },
+    //   { link: "/home-7", title: "Home Style 7" },
+    // ],
   },
   {
     link: "/shop",
